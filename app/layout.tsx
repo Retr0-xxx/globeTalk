@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-//imported for auth
 import { ClerkProvider, RedirectToSignIn, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import './globals.css';  // Ensure this path matches your actual globals.css file path
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import {cn} from '@/lib/utils';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +23,14 @@ export default function RootLayout({
           <SignedIn>
             <UserButton />
           </SignedIn>
-          {children}
+          <ThemeProvider 
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            storageKey="theme"
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

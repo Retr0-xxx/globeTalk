@@ -1,5 +1,12 @@
+import { ModeToggle } from "@/components/theme-toggle";
+
 export default function Home() {
   return (
-    <h1>this is the index page</h1>
+    <body>
+      <div>
+        <ModeToggle />
+      </div>
+      <h1>Home Page</h1>
+    </body>
   );
 }
