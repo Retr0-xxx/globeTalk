@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-    <p>12345</p>
+    <h1>this is the index page</h1>
   );
 }
