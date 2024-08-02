@@ -5,6 +5,7 @@ import { ClerkProvider, RedirectToSignIn, SignInButton, SignedIn, SignedOut, Use
 import './globals.css';  // Ensure this path matches your actual globals.css file path
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import {cn} from '@/lib/utils';
+import { ModeToggle } from "@/components/theme-toggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
             enableSystem={false}
             storageKey="theme"
           >
+          <ModeToggle />
             {children}
           </ThemeProvider>
         </body>
