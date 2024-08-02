@@ -21,16 +21,12 @@ export default function RootLayout({
           <SignedOut>
             <RedirectToSignIn />
           </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
           <ThemeProvider 
             attribute="class"
             defaultTheme="light"
             enableSystem={false}
             storageKey="theme"
           >
-          <ModeToggle />
             {children}
           </ThemeProvider>
         </body>
